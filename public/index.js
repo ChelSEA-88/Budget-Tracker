@@ -1,3 +1,16 @@
+//If server worker exists will register
+if("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./serviceWorker.js", {
+    scope: "/"
+  })
+    .then((res) => {
+      console.log(res);
+      console.log("Service Worker registered successfully.");
+    })
+    .catch(error => console.log("Service Worker registration failed:", error));
+}
+
+
 let transactions = [];
 let myChart;
 
